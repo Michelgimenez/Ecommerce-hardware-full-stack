@@ -60,6 +60,9 @@ exports.getOne = (Model) =>
   catchAsync(async (req, res, next) => {
     // 1) Llamo al metodo de findById sobre el modelo, para encontrar un producto en base a su id, y para obtener el id, lo extraigo de la solicitud, utilizando req.params, esto me da los parametros colocados en el url de la solicitud y selecciono el id, que es el que espeficique en productRoutes.js (/:id)
     const document = await Model.findById(req.params.id);
+    const documents = await Model.find({});
+
+    console.log(document);
 
     // Si busco un documento por ejemplo con un id invalido, el servidor responde con success pero la respuesta es NULL, ya que no encontre ningun documento, asi que para resolver eso de SUCCESS, detecto primero si encontre algun documento y en ese caso, procedo a crear un error llamando a la class que cree donde envio el mensaje y el statusCode y esto me da como retorno el error ya teniendo los fields de status, message, statusCode. Y esto es lo que se envia atraves de NEXT, que si recuerdo, al enviarlo a traves de next, lo envia directamente al global error handler. Uso return para que la funcion finalice aca.
     if (!document) {

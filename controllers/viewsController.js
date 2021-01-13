@@ -35,6 +35,13 @@ exports.getContact = (req, res) => {
 exports.getProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findOne({ slug: req.params.slug });
 
+  const documents = await Product.find({});
+  let filteredDocuments = documents.filter((document) => {
+    if (product.category === document.category && document.id !== product.id) {
+      return document;
+    }
+  });
+
   // 2) Si no encuentro ningun producto con ese SLUG, entonces procedo a crear un error que lo recibe el global error handler.
   if (!product) {
     return next(new AppError('No existe ningun producto con ese nombre', 404));
@@ -43,6 +50,7 @@ exports.getProduct = catchAsync(async (req, res, next) => {
   res.status(200).render('product', {
     title: `${product.name}`,
     product: product,
+    filteredDocuments: filteredDocuments.slice(0, 3),
   });
 });
 

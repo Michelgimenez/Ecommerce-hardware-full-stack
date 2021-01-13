@@ -48,22 +48,13 @@ block content
   section.related
       h3.related__title Productos relacionados
       .related__products
-        .products__item
-          .products__img.products__img-1
-          h3.products__title Teclado Razer
-          p.products__price $ 5.800
-        .products__item
-          .products__img.products__img-2
-          h3.products__title SSD Nmve western black 1tb
-          p.products__price $23.000
-        .products__item
-          .products__img.products__img-3
-          h3.products__title Ryzen 9 3950x
-          p.products__price $29.500
-        .products__item
-          .products__img.products__img-4
-          h3.products__title Intel i9 10900k
-          p.products__price $43.000
+        each product in filteredDocuments
+          .products__item
+            a.products__item(href=`/product/${product.slug}`)
+              .products__img.products__img-1
+                img(src=`/img/products/${product.imageCover}` alt=`${product.name}`,   class=`product__img`)
+              h3.products__title= product.name
+              p.products__price= `$${product.price}`
   .cart
       aside.cart__content
         button.cart__close
