@@ -1,0 +1,61 @@
+extends base
+
+block body
+  body.container3
+
+block content
+  section.about
+      .about__description
+        a.about__link(href="index.html") Inicio
+        span.about__span /
+        p.about__actual Carrito
+  .cart-details
+      .cart-details__categories
+        p Producto
+        p Precio
+        p Cantidad
+        p Quitar
+      .cart-details-line
+      .cart-details__products
+        
+      .cart-details__checkout
+        .cart-details__checkout-payment
+          h2 Metodo de pago:
+          div
+            select.cart-details__checkout-payment-option
+              option Efectivo en persona
+              option Stripe
+              option Mercado Pago
+              option Paypal
+            .cart-details__checkout-images
+              img(src="./img/mercado.png" alt="")
+              img(src="./img/stripe.png" alt="")
+              img(src="./img/paypal.png" alt="")
+          p
+            | * Por favor tenga en cuenta que la pasarela de pago de
+            span  MERCADO PAGO
+            |  tiene un cargo extra por la comision que
+            |             cobra el servicio. En caso de que quiera achicar el costo final, le
+            |             recomendamos que utilice la pasarela de pago de
+            span  STRIPE
+            |  que es segura, rapida y el costo del servicio es
+            |             muy bajo.
+        .cart-details__checkout-total
+          h2 Precio total del carrito:
+          .cart-details__checkout-total-details
+            .cart-details__checkout-total-details-total
+              p Total:
+              p.cart-details__checkout-total-details-total-price $23.000,00
+          a.cart-details__checkout-total-btn(href="") Proceder al pago
+
+
+  .cart
+    aside.cart__content
+      button.cart__close
+        ion-icon(name="close-outline")
+      header
+        h3.cart__title Tu carrito
+      .cart__items
+      footer
+        h3.cart__total Total: $320.000
+        button.cart__checkout-btn Comprar   

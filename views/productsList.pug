@@ -1,0 +1,59 @@
+extends base
+
+block body
+  body.container4
+
+block content
+  main.main
+      .user-view
+        .user-view__menu
+          ul.user-view__menu-links
+            li.active
+              a(href="/me")
+                ion-icon(name="settings-outline")
+                |  Ajustes
+            li
+              a(href="/usersorders")
+                ion-icon(name="card-outline")
+                |  Mis compras
+            li
+              a(href="/productslist")
+                ion-icon(name="pricetags-outline")
+                |  Productos
+            li
+              a(href="users.html")
+                ion-icon(name="person-outline")
+                |  Usuarios
+            li
+              a(href="orders.html")
+                ion-icon(name="wallet-outline")
+                |  Pedidos
+        .productslist-view__products
+          h2 Productos
+          .productslist-view__products-container
+            .productslist-view__products-categories
+              h3 Nombre
+              h3 Portada
+              h3 Stock
+              h3 Eliminar
+              h3 Editar
+            each product in products  
+              .productslist-view__product(data-id=`${product.id}`)
+                h3= product.name
+                img.productslist-view__image(src=`/img/products/${product.imageCover}`) 
+                h3= product.countInStock
+                button.productslist-view__delete-btn
+                  ion-icon(name="trash-outline")
+                button.productslist-edit-btn
+                  ion-icon(name="create-outline")
+          a.productslist-view__products-button(href="/createproduct") nuevo producto
+  .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar           

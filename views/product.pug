@@ -1,0 +1,77 @@
+extends base
+
+block body
+  body.container2
+
+block content
+  section.about
+      .about__description
+        a.about__link(href="/") Inicio
+        span.about__span /
+        a.about__link(href="/products") Productos
+        span.about__span /
+        p.about__actual= product.name
+  section.product(data-id= product.id)
+      figure.product__image
+        img.product__img.active(src=`/img/products/${product.imageCover}` alt=`${product.name}`)
+      .product__details
+        h3.product__heading= product.name
+        // <p class="product__discount">$23.000</p>
+        p.product__price= `$${product.price}`
+        p.product__stock
+          | Disponibilidad: 
+          - if (product.countInStock > 0)
+            span En Stock
+          - if (product.countInStock < 1)
+            span Sin Stock  
+        p.product__resume= product.description  
+        .product__buy
+          button.product__button(data-id="id")
+            | Añadir al carrito
+        .product__share
+          p Compartir:
+          a.product__link(href="#")
+            ion-icon.product__icon(name="logo-instagram")
+          a.product__link(href="#")
+            ion-icon.product__icon(name="logo-twitter")
+          a.product__link(href="#")
+            ion-icon.product__icon(name="logo-facebook")
+          a.product__link(href="#")
+            ion-icon.product__icon(name="logo-whatsapp")
+      .product__images
+        each img, i in product.images
+          img(src=`/img/products/${img}` alt=`${product.name} ${i + 1}`, class=`product__images-${i + 1}`)
+        
+  section.description
+      h3.description__heading Descripcion
+      p.description__paragraph= product.overview
+  section.related
+      h3.related__title Productos relacionados
+      .related__products
+        .products__item
+          .products__img.products__img-1
+          h3.products__title Teclado Razer
+          p.products__price $ 5.800
+        .products__item
+          .products__img.products__img-2
+          h3.products__title SSD Nmve western black 1tb
+          p.products__price $23.000
+        .products__item
+          .products__img.products__img-3
+          h3.products__title Ryzen 9 3950x
+          p.products__price $29.500
+        .products__item
+          .products__img.products__img-4
+          h3.products__title Intel i9 10900k
+          p.products__price $43.000
+  .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar     
+

@@ -1,0 +1,31 @@
+nav.nav
+    .nav__phone
+        ion-icon(name="menu-outline")
+    .nav__logo
+        a(href="/")  Nexus 
+    .nav__links
+        button.nav__close
+            ion-icon(name="close-outline")
+        ul.nav__list
+            li.nav__item
+                a.nav__link(href="/products")
+                    | Productos
+                    ion-icon.nav__link-icon(name="chevron-down-outline")
+            li.nav__item
+                a.nav__link(href="/") Equipos armados 
+            li.nav__item
+                a.nav__link(href="/contact") Contacto
+    .nav__cart
+        a.nav__cart-link(href="")
+            ion-icon.nav__cart-icon(name="cart-outline")
+            span.nav__cart-span (0)  
+            
+        if user
+          a.logout-btn cerrar sesion
+          a.user__profile(href="/me")
+            img.logout(src=`/img/users/${user.photo}`)
+            p= user.name
+
+        else   
+          a.log-in-btn(href="/login") iniciar sesion    
+          a.register-btn(href="/signup") registrarme

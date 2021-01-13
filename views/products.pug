@@ -1,0 +1,37 @@
+extends base
+
+block body
+  body.container5
+
+block content
+  section.about
+      .about__description
+        a.about__link(href="/") Inicio
+        span.about__span /
+        a.about__link(href="/products") Productos
+
+  section.allProducts
+      .filters
+        .filters__container
+          form.filters__form
+            input.filters__search(type="text" placeholder="Buscar...")
+            h4 Categorias
+            select.filters__categories
+             option Todo
+             option Mouse
+             option Placa de video
+            p.price-value
+            a.filter-btn Buscar
+      .products__container
+      .pagination
+      .filter-pagination
+  .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar   

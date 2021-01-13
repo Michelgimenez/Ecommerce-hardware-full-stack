@@ -1,0 +1,64 @@
+extends base
+
+block body
+  body.container4
+
+block content
+  main.main-orders
+      .order-view
+        .order-view__menu
+          ul.order-view__menu-links
+            li.active
+              a(href="/me")
+                ion-icon(name="settings-outline")
+                |  Ajustes
+            li
+              a(href="/usersorders")
+                ion-icon(name="card-outline")
+                |  Mis compras
+            li
+              a(href="/productslist")
+                ion-icon(name="pricetags-outline")
+                |  Productos
+            li
+              a(href="/userslist")
+                ion-icon(name="person-outline")
+                |  Usuarios
+            li
+              a(href="/orders-list")
+                ion-icon(name="wallet-outline")
+                |  Pedidos
+        .orderlist-view__users
+          h2 Pedidos
+          .orderlist-view__users-container
+            .orderlist-view__users-categories
+              h3 Usuario
+              h3 Email
+              h3 Productos/cantidad
+              h3 Precio total
+              h3 Eliminar
+              h3 Editar
+            each order in orders  
+              .orderlist-view__user(data-orderid=`${order.id}` data-userid=`${order.user._id}`)
+                h3= order.user.name
+                h3= order.user.email 
+                .orderlist-view__products
+                  each product in order.orderItems
+                    p= product.name
+                    p= product.amount
+                h3= order.totalPrice
+                button.orderlist-view__delete-btn
+                  ion-icon.orderlist-view__delete-btn-icon(name="trash-outline")
+                button.orderlist-edit-btn
+                  ion-icon(name="create-outline")
+
+  .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar    

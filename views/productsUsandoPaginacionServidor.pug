@@ -1,0 +1,60 @@
+extends base
+
+block body
+  body.container5
+
+block content
+  section.about
+      .about__description
+        a.about__link(href="/") Inicio
+        span.about__span /
+        a.about__link(href="/products") Productos
+
+  section.allProducts
+      .filters
+        .filters__container
+          form.filters__form
+            input.filters__search(type="text" placeholder="Buscar...")
+          h4 Categorias
+          .filters__types
+            button.filters__types-btn Todo
+            button.filters__types-btn Memorias ram
+            button.filters__types-btn Microprocesadores
+            button.filters__types-btn Periféricos
+            button.filters__types-btn Placas de video
+          h4 Precio
+          form.price-form
+            input.price-filter(type="range" min="0" value="0" max="32000")
+          p.price-value
+      .products__container
+        if products.length > 0
+          each product in products 
+            a.products__item(href=`/product/${product.slug}`)
+              .products__image
+                img(src=`/img/products/${product.imageCover}` alt=`${product.name}`)
+              h3.products__title= product.name
+              p.products__price= product.price  
+        else 
+          h1 hola      
+      .pagination
+        if currentPage != 1 && previousPage != 1
+          a(href=`?page=1`) 1
+        if hasPreviousPage
+          a(href=`?page=${previousPage}`)= previousPage 
+        a.active(href=`?page=${currentPage}`)= currentPage
+        if hasNextPage
+          a(href=`?page=${nextPage}`)= nextPage  
+        if lastPage != currentPage && nextPage != lastPage
+          a(href=`?page=${lastPage}`)= lastPage   
+
+  .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar             
+              

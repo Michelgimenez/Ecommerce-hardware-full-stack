@@ -1,0 +1,43 @@
+extends base
+
+block body
+  body.container4
+
+block content
+  main.payment
+      .payment__container
+          h2 Pago en persona
+          form.payment__form(data-id= user.id)
+            div
+              label(for="phone") Telefono
+              input#phone(type="text" placeholder="+5411..." required="required")
+            div
+              label(for="date") Fecha de retiro
+              input#date(type="date"  required="required")
+            div
+              label(for="location") * Direccion 
+              input#location(type="text" placeholder="Calle falsa 123" )
+            div
+              label(for="province") * Provincia 
+              input#province(type="text" placeholder="Buenos Aires" )  
+            div
+              label(for="city") * Ciudad
+              input#city(type="text" placeholder="Moreno" )    
+            div
+              label(for="postalCode") * Codigo postal
+              input#postalCode(type="text" placeholder="1744" )    
+            p La informacion marcada con * es opcional. La utilizamos en caso de que creas que hay una posibilidad de que no puedas hacer el retiro y que prefieras que te lo enviemos. De esa forma podemos obviar esa informacion a la hora de comunicarnos con vos.
+            div
+              button.btn.btn-payment-in-person.btn--green Confirmar compra
+  
+
+  .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar  

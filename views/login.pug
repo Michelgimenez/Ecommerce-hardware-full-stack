@@ -1,0 +1,52 @@
+extends base
+
+block body
+  body.container4
+
+block content
+  if user 
+    main.main2
+      .error__page
+        .error__title
+          h2.heading-secondary.heading-secondary--error Ya estas logueado   
+          h2.error__emoji 😁😁
+        .error__msg Por favor vuelva al inicio...
+        a(href="/") Inicio
+    .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar
+  else
+    main.login
+      .login__container
+          h2 Ingrese a su cuenta
+          form.login__form
+            div
+              label(for="email") Email
+              input#email(type="email" placeholder="ejemplo@gmail.com" required="required")
+            div
+              label(for="password") Contraseña
+              input#password(type="password" placeholder="••••••••" required="required" minlength="8")
+            div
+              a(href="/signup") No tiene una cuenta?
+            div
+              button.btn.btn--green Iniciar sesión
+    .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar               
+
+              
+    

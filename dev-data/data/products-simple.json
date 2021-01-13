@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Logitech G203 Prodigy",
+    "imageCover": "https://resource.logitechg.com/e_trim/w_652,ar_4:3,c_limit,q_auto:best,f_auto/w_692,h_519,c_lpad,b_rgb:2f3132,dpr_auto/content/dam/gaming/en/products/g203/g203-gallery-1.png?v=1",
+    "images": [
+      "https://resource.logitechg.com/e_trim/w_652,ar_4:3,c_limit,q_auto:best,f_auto/w_692,h_519,c_lpad,b_rgb:2f3132,dpr_auto/content/dam/gaming/en/products/g203/g203-gallery-1.png?v=1",
+      "https://resource.logitechg.com/e_trim/w_652,ar_4:3,c_limit,q_auto:best,f_auto/w_692,h_519,c_lpad,b_rgb:2f3132,dpr_auto/content/dam/gaming/en/products/g203/g203-gallery-2.png?v=1",
+      "https://resource.logitechg.com/e_trim/w_652,ar_4:3,c_limit,q_auto:best,f_auto/w_692,h_519,c_lpad,b_rgb:2f3132,dpr_auto/content/dam/gaming/en/products/g203/g203-gallery-3.png?v=1",
+      "https://resource.logitechg.com/e_trim/w_652,ar_4:3,c_limit,q_auto:best,f_auto/w_692,h_519,c_lpad,b_rgb:2f3132,dpr_auto/content/dam/gaming/en/products/g203/g203-gallery-5.png?v=1"
+    ],
+    "brand": "Logitech",
+    "featured": true,
+    "category": "Placa de video",
+    "description": "La mejor placa de video del mercado",
+    "overview": "Jjeeeeeeeee",
+    "price": 18000,
+    "countInStock": 4
+  },
+  {
+    "name": "Nvidia RTX 3090",
+    "imageCover": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/rtx-3090/geforce-rtx-3090-shop-630-d.png",
+    "images": [
+      "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/rtx-3090/geforce-rtx-3090-shop-630-d.png",
+      "https://i0.wp.com/pcmrace.s3.amazonaws.com/2020/11/geforce-rtx-3090-product-gallery-full-screen-3840-2-scaled-1.jpg?ssl=1",
+      "https://www.pcmgames.com/wp-content/uploads/2020/09/NVIDIA-RTX-3080.jpg",
+      "https://areajugones.sport.es/wp-content/uploads/2020/09/rtx-3090-1.jpg"
+    ],
+    "brand": "Nvidia",
+    "featured": true,
+    "category": "Placa de video",
+    "description": "La mejor placa de video del mercado",
+    "overview": "Jjeeeeeeeee",
+    "price": 233000,
+    "countInStock": 7
+  },
+  {
+    "name": "Fuente 1000w EVGA SUPERNOVA G2 ",
+    "imageCover": "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fuente-1000w-evga-supernova-g2-80-plus-gold-0.jpg",
+    "images": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fuente-1000w-evga-supernova-g2-80-plus-gold-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fuente-1000w-evga-supernova-g2-80-plus-gold-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fuente-1000w-evga-supernova-g2-80-plus-gold-3.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/fuente-1000w-evga-supernova-g2-80-plus-gold-2.jpg"
+    ],
+    "brand": "EVGA",
+    "featured": true,
+    "category": "Fuente",
+    "description": "La mejor placa de video del mercado",
+    "overview": "Jjeeeeeeeee",
+    "price": 18000,
+    "countInStock": 4
+  },
+  {
+    "name": "Mother Gigabyte Z390 AORUS ULTRA",
+    "imageCover": "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-gigabte-z390-aorus-ultra-0.jpg",
+    "images": [
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-gigabte-z390-aorus-ultra-0.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-gigabte-z390-aorus-ultra-1.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-gigabte-z390-aorus-ultra-3.jpg",
+      "https://www.fullh4rd.com.ar/img/productos/Pics_Prod/mother-gigabte-z390-aorus-ultra-2.jpg"
+    ],
+    "brand": "Gigabyte",
+    "featured": true,
+    "category": "Motherboard",
+    "description": "La mejor placa de video del mercado",
+    "overview": "Jjeeeeeeeee",
+    "price": 25000,
+    "countInStock": 4
+  },
+  {
+    "name": "Procesador Intel Core i9 10850K",
+    "imageCover": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_22492_Procesador_Intel_Core_i9_10850K_5.2GHz_Turbo_1200_Comet_Lake_3dd84d1b-grn.jpg",
+    "images": [
+      "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_22492_Procesador_Intel_Core_i9_10850K_5.2GHz_Turbo_1200_Comet_Lake_3dd84d1b-grn.jpg",
+      "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_22493_Procesador_Intel_Core_i9_10850K_5.2GHz_Turbo_1200_Comet_Lake_d20b18ed-grn.jpg",
+      "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_22494_Procesador_Intel_Core_i9_10850K_5.2GHz_Turbo_1200_Comet_Lake_4d693604-grn.jpg",
+      "https://media.ldlc.com/r1600/ld/products/00/05/66/86/LD0005668603_2_0005701907.jpg"
+    ],
+    "brand": "Intel",
+    "featured": true,
+    "category": "Placa de video",
+    "description": "La mejor placa de video del mercado",
+    "overview": "Jjeeeeeeeee",
+    "price": 56000,
+    "countInStock": 4
+  }
+]

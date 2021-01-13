@@ -1,0 +1,103 @@
+extends base
+
+block body
+  body.container4
+
+block content
+  main.main
+      .user-view
+        .user-view__menu
+          ul.user-view__menu-links
+            li.active
+              a(href="user.html")
+                ion-icon(name="settings-outline")
+                |  Ajustes
+            li
+              a(href="userorders.html")
+                ion-icon(name="card-outline")
+                |  Mis compras
+            li
+              a(href="productslist.html")
+                ion-icon(name="pricetags-outline")
+                |  Productos
+            li
+              a(href="users.html")
+                ion-icon(name="person-outline")
+                |  Usuarios
+            li
+              a(href="orders.html")
+                ion-icon(name="wallet-outline")
+                |  Pedidos
+        .product-edit-view__content
+          .product-edit-view__container
+            h2 CREAR PRODUCTO
+            form.form.form__product-create
+              .form__group-product
+                label(for="productname") Nombre
+                input#productname(type="text" value="")
+              .form__group-product
+                label(for="productbrand") Marca
+                select#productbrand
+                  option(value="Logitech") Logitech
+                  option(value="Nvidia") Nvidia
+                  option(value="Evga") Evga
+                  option(value="Gigabyte") Gigabyte
+                  option(value="Intel") Intel
+              .form__group-product.form__group-photo-upload
+                img.form__image.form__image-1( alt="")
+                input#imageCover(type="file" accept="image/*" name="imageCover")
+                label(for="imageCover") Foto de portada
+              .form__group-product.form__group-photo-upload
+                img.form__image.form__image-2( alt="")
+                input#image1(type="file" accept="image/*" name="image1")
+                label(for="image1") Imagen descriptiva 1
+              .form__group-product.form__group-photo-upload
+                img.form__image.form__image-3( alt="")
+                input#image2(type="file" accept="image/*" name="image2")
+                label(for="image2") Imagen descriptiva 2
+              .form__group-product.form__group-photo-upload
+                img.form__image.form__image-4( alt="")
+                input#image3(type="file" accept="image/*" name="image3")
+                label(for="image3") Imagen descriptiva 3
+              .form__group-product.form__group-photo-upload
+                img.form__image.form__image-5( alt="")
+                input#image4(type="file" accept="image/*" name="image4")
+                label(for="image4") Imagen descriptiva 4
+              .form__group-product
+                label(for="productcategory") Categoria
+                select#productcategory
+                  option(value="Placa de video") Placa de video
+                  option(value="Motherboard") Motherboard
+                  option(value="Fuente") Fuente
+                  option(value="Mouse") Mouse
+                  option(value="Teclado") Teclado
+                  option(value="Disco solido") Disco solido
+              .form__group-product
+                label(for="productoverview") Resumen
+                input#productoverview(type="text")
+              .form__group-product
+                label(for="productdescription") Descripcion
+                input#productdescription(type="text")
+              .form__group-product
+                label(for="productprice") Precio
+                input#productprice(type="text")
+              .form__group-product
+                label(for="productstock") Stock
+                input#productstock(type="text")
+              .form__group-product
+                label(for="productfeatured") Destacado
+                select#productfeatured
+                  option(value="si") si
+                  option(value="no") no
+              .form__group-product.form__group-btn
+                button.btn Crear producto    
+  .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar               

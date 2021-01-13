@@ -1,0 +1,103 @@
+extends base
+
+block body
+  body.container
+
+block content
+  header.header
+      .slider
+        .slide
+          .slide__container
+            .slide__container-content(data-content="0")
+              h2 La computadora de tus sueños
+              p
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sunt culpa sapiente possimus aliquid accusamus sed distinctio ipsam eius.
+              button  Comprar 
+          img(src="./img/1.jpg" alt="Photo 1")
+        .slide
+          .slide__container
+            .slide__container-content(data-content="1")
+              h2 Armate tu habitacion gamer
+              p
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sunt culpa sapiente possimus aliquid accusamus sed distinctio ipsam eius.
+              button  Comprar 
+          img(src="./img/2.jpg" alt="Photo 2")
+        .slide
+          .slide__container
+            .slide__container-content(data-content="2")
+              h2 Lo ultimo en perifericos
+              p
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sunt culpa sapiente possimus aliquid accusamus sed distinctio ipsam eius.
+              button  Comprar 
+          img(src="./img/3.jpg" alt="Photo 3")
+        .slide
+          .slide__container
+            .slide__container-content(data-content="3")
+              h2 La computadora de tus sueños
+              p
+                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sunt culpa sapiente possimus aliquid accusamus sed distinctio ipsam eius.
+              button  Comprar 
+          img(src="./img/4.jpg" alt="Photo 4")
+        ion-icon.slider__btn.slider__btn--left(name="chevron-back-outline")
+        ion-icon.slider__btn.slider__btn--right(name="chevron-forward-outline")
+        .dots
+  section.ads
+      .ads-1
+        .ads__information-1
+          h2.ads__heading Tenemos las nuevas RTX serie 3000
+          a.ads__link(href="#") Ver placas
+      .ads-2
+        .ads__information-2
+          h2.ads__heading
+            | Renova tu pc con los nuevos procesadores de intel
+          a.ads__link(href="#") Ver procesadores      
+  section.products
+    each product in featuredProducts
+      a.products__item(href=`/product/${product.slug}`)
+        .products__image
+          img(src=`/img/products/${product.imageCover}` alt=`${product.name}`)
+        h3.products__title= product.name
+        p.products__price= product.price  
+  section.ad
+     .ad__img
+       .ad__information
+         h2.ad__heading Disfruta del sonido envolvente
+         a.ad__link(href="#") Ver auriculares  
+  section.features
+      .features__feature
+        ion-icon.features__icon.features__icon-1(name="chatbubbles-outline")
+        h3.features__heading Soporte al cliente
+        p.features__paragraph
+          | Contamos con diversas vias de comunicacion en las que vas a poder
+          | hacer todas tus consultas
+      .features__feature
+        ion-icon.features__icon.features__icon-2(name="cash-outline")
+        h3.features__heading Compra protegida
+        p.features__paragraph
+          | Contamos con diferentes pasarelas de pago que le permiten al cliente
+          | abonar de forma segura y rapida
+      .features__feature
+        ion-icon.features__icon.features__icon-3(name="location-outline")
+        h3.features__heading Envios a todo el pais
+        p.features__paragraph
+          | Hacemos envios a todo el pais y nos aseguramos de que tu compra llegue
+          | rapido
+  section.subscription
+      h2.subscription__heading Enterate de todas nuestras ofertas!
+      p.subscription__paragraph
+        | Suscribite a nuestro boletin de informacion para ser el primero en
+        | enterarte de nuestras ofertas e ingreso de productos!
+      form.subscription__form(action="#")
+        input(type="email" name="email" id="" placeholder="ejemplo@gmail.com" required="")
+        button.subscription__button(type="submit") Suscribirme     
+  .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar      
+

@@ -1,0 +1,119 @@
+extends base
+
+block body
+  body.container4
+
+block content
+  main.main
+      .user-view
+        .user-view__menu
+          ul.user-view__menu-links
+            li.active
+              a(href="user.html")
+                ion-icon(name="settings-outline")
+                |  Ajustes
+            li
+              a(href="userorders.html")
+                ion-icon(name="card-outline")
+                |  Mis compras
+            li
+              a(href="productslist.html")
+                ion-icon(name="pricetags-outline")
+                |  Productos
+            li
+              a(href="users.html")
+                ion-icon(name="person-outline")
+                |  Usuarios
+            li
+              a(href="orders.html")
+                ion-icon(name="wallet-outline")
+                |  Pedidos
+        .order-edit-view__content
+          .order-edit-view__container
+            h2 Editar orden
+            form.form.form__order-create
+              .form__group-order
+                label(for="ordername") Telefono
+                input#orderuserphone(type="text" value= order.phoneNumber)  
+              .form__group-order
+                label(for="orderbrand") Metodo de pago
+                if order.paymentMethod === 'Efectivo en persona'
+                  select#orderpaymentMethod
+                    option(value="Efectivo en persona" selected) Efectivo en persona
+                    option(value="Stripe") Stripe
+                    option(value="Paypal") Paypal
+                    option(value="Mercado pago") Mercado pago
+                else if order.paymentMethod === 'Stripe'
+                  select#orderpaymentMethod
+                    option(value="Efectivo en persona" ) Efectivo en persona
+                    option(value="Stripe" selected) Stripe
+                    option(value="Paypal") Paypal
+                    option(value="Mercado pago") Mercado pago
+                else if order.paymentMethod === 'Paypal'
+                  select#orderpaymentMethod
+                    option(value="Efectivo en persona" ) Efectivo en persona
+                    option(value="Stripe" ) Stripe
+                    option(value="Paypal" selected) Paypal
+                    option(value="Mercado pago") Mercado pago  
+                else if order.paymentMethod === 'Mercado pago'
+                  select#orderpaymentMethod
+                    option(value="Efectivo en persona" ) Efectivo en persona
+                    option(value="Stripe" ) Stripe
+                    option(value="Paypal" ) Paypal
+                    option(value="Mercado pago" selected) Mercado pago        
+              .form__group-order
+                label(for="ordercategory") Entregado
+                if order.isPaid === false
+                  select#orderdelivered
+                    option(value="Si") Si
+                    option(value="No" selected) No
+                else 
+                  select#orderdelivered
+                    option(value="Si" selected) Si
+                    option(value="No") No
+              .form__group-order
+                label(for="ordercategory") Pagado
+                if order.isPaid === false
+                  select#orderispaid
+                    option(value="Si") Si
+                    option(value="No" selected) No
+                else 
+                  select#orderispaid
+                    option(value="Si" selected) Si
+                    option(value="No") No      
+              .form__group-order
+                label(for="orderoverview") Fecha de retiro
+                input#orderretirementdate(type="text" value= order.retirementDate)  
+              .form__group-order
+                label(for="orderdescription") Direccion
+                input#orderlocation(type="text" value= order.houseDirection)
+              .form__group-order
+                label(for="orderdescription") Provincia
+                input#orderprovince(type="text" value= order.province)
+              .form__group-order
+                label(for="orderdescription") Ciudad
+                input#ordercity(type="text" value= order.city)
+              .form__group-order
+                label(for="orderdescription") Codigo postal
+                input#orderpostalcode(type="text" value= order.postalCode)   
+              .form__group-order
+                label(for="orderoverview") Precio total
+                input#ordertotalprice(type="text" value= order.totalPrice)   
+              each product, i in order.orderItems   
+                .form__group-order
+                  label(for="orderoverview") Producto #{i + 1}:  Nombre/cantidad/precio
+                  input#orderproduct(type="text" value= product.name disabled)   
+                  input#orderproductamount(type="text" value= product.amount disabled) 
+                  input#orderproductprice(type="text" value= product.price disabled) 
+              .form__group-order.form__group-btn
+                button.btn.btn-order-update Actualizar orden    
+  .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar  

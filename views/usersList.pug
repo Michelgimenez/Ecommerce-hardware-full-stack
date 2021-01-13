@@ -1,0 +1,59 @@
+extends base
+
+block body
+  body.container4
+
+block content
+  main.main
+      .user-view
+        .user-view__menu
+          ul.user-view__menu-links
+            li.active
+              a(href="/me")
+                ion-icon(name="settings-outline")
+                |  Ajustes
+            li
+              a(href="/usersorders")
+                ion-icon(name="card-outline")
+                |  Mis compras
+            li
+              a(href="/productslist")
+                ion-icon(name="pricetags-outline")
+                |  Productos
+            li
+              a(href="users.html")
+                ion-icon(name="person-outline")
+                |  Usuarios
+            li
+              a(href="orders.html")
+                ion-icon(name="wallet-outline")
+                |  Pedidos
+        .userslist-view__users
+          h2 Usuarios
+          .userslist-view__users-container
+            .userslist-view__users-categories
+              h3 Nombre
+              h3 Foto
+              h3 Email
+              h3 Eliminar
+              h3 Editar
+            each user in users  
+              .userslist-view__user(data-id=`${user.id}`)
+                h3= user.name
+                img.userslist-view__image(src=`/img/users/${user.photo}`) 
+                h3= user.email
+                button.userslist-view__delete-btn
+                  ion-icon.userslist-view__delete-btn-icon(name="trash-outline")
+                button.userslist-edit-btn
+                  ion-icon(name="create-outline")
+
+  .cart
+      aside.cart__content
+        button.cart__close
+          ion-icon(name="close-outline")
+        header
+          h3.cart__title Tu carrito
+        .cart__items
+        footer
+          h3.cart__total Total: $320.000
+          button.cart__checkout-btn Comprar                   

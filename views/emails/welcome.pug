@@ -1,0 +1,17 @@
+extends baseEmail
+
+block content
+  p Hola #{firstName},
+  p Bienvenido a NEXUS, nos alegra tu llegada! 🎉🙏
+  p Somos una familia numerosa aca asi que en caso de que quieras que te conozcamos mejor podrias comenzar subiendo una foto de perfil y contarnos tu nombre!
+  table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+    tbody
+      tr
+        td(align='left')
+          table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+            tbody
+              tr
+                td
+                  a(href=`${url}`, target='_blank') Subir foto de usuario 
+  p Si tenes alguna duda sobre nuestros productos o servicios, no dudes en contactarnos
+  p - Michel Gimenez, Fundador

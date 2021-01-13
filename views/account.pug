@@ -1,0 +1,67 @@
+extends base
+
+
+mixin navItem(link, text, icon, active)
+  li(class=`${active ? 'active' : ''}`)
+    a(href=`${link}`)
+      ion-icon(name=`${icon}`)
+      | #{text}
+      
+
+block body
+  body.container4
+
+block content
+  main.main
+      .user-view
+        .user-view__menu
+          ul.user-view__menu-links
+            +navItem('/me', 'Ajustes', 'settings-outline', 'active')
+            +navItem('/myorders', 'Mis compras', 'card-outline', '')
+            
+            - if(user.role === 'admin')  
+              +navItem('/productslist', 'Productos', 'pricetags-outline', '')
+              +navItem('/userslist', 'Usuarios', 'person-outline', '')
+              +navItem('/orders-list', 'Pedidos', 'wallet-outline', '')
+              +navItem('/carrousel', 'Carrousel', 'images-outline', '')
+        .user-view__content
+          .user-view__container
+            h2 Ajustes de usuario
+            form.form.form__user
+              .form__group
+                label(for="name") Nombre
+                input#username(type="text", value=`${user.name}`, required, name='name')
+              .form__group
+                label(for="email") Email
+                input#useremail(type="email", value=`${user.email}`, required)
+              .form__group.form__group-photo-upload
+                img.form__image(src=`/img/users/${user.photo}` alt="")
+                input#photo(type="file" accept="image/*" name="photo")
+                label(for="photo") Cambiar foto
+              .form__group.form__group-btn
+                button.btn Guardar ajustes
+          .line  
+          .user-view__container
+            h2 Cambio de contraseña
+            form.form.form__password
+              .form__group
+                label(for="password") Contraseña actual
+                input#useractualpassword(type="password" placeholder="••••••••")
+              .form__group
+                label(for="password") Nueva contraseña
+                input#userpassword(type="password" placeholder="••••••••")
+              .form__group-confirm
+                label(for="password") Confirmar contraseña
+                input#userpasswordconfirm(type="password" placeholder="••••••••")
+              .form__group.form__group-btn
+                button.btn.btn__password Guardar contraseña  
+  .cart
+    aside.cart__content
+      button.cart__close
+        ion-icon(name="close-outline")
+      header
+        h3.cart__title Tu carrito
+      .cart__items
+      footer
+        h3.cart__total Total: $320.000
+        button.cart__checkout-btn Comprar               
